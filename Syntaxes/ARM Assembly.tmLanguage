@@ -13,7 +13,13 @@
 	<array>
 		<dict>
 			<key>match</key>
-			<string>(#|;).*$</string>
+			<string>@.*$</string>
+			<key>name</key>
+			<string>comment.line</string>
+		</dict>
+		<dict>
+			<key>match</key>
+            <string>//.*$</string>
 			<key>name</key>
 			<string>comment.line</string>
 		</dict>
@@ -224,15 +230,9 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(aaa|aad|aam|aas|adc|add|and|arpl|bound|bsf|bsr|bswap|bt|btc|btr|bts|call|cbw|cdq|clc|cld|cli|clts|cmc|cmp|cmps|cmpxchg|cwd|cwde|daa|das|dec|div|enter|esc|hlt|idiv|imul|in|inc|ins|int|into|invd|invlpg|iret|iretd|ja|jae|jb|jbe|jc|jcxz|je|jecxz|jg|jge|jl|jle|jmp|jna|jnae|jnb|jnbe|jnc|jne|jng|jnge|jnl|jnle|jno|jnp|jns|jnz|jo|jp|jpe|jpo|js|jz|lahf|lar|lds|lea|leave|les|lfs|lgdt|lidt|lgs|lldt|lmsw|lock|lods|loop|loope|loopz|loopnz|loopne|lsl|lss|ltr|mov|movs|movsx|movzx|mul|neg|nop|not|or|out|outs|pop|popa|popad|popf|popfd|push|pusha|pushad|pushf|pushfd|rcl|rcr|rep|repe|repz|repne|repnz|ret|retf|rol|ror|sahf|sal|sar|sbb|scas|setae|setnb|setb|setnae|setbe|setna|sete|setz|setne|setnz|setl|setnge|setge|setng|setle|setng|setg|setnle|sets|setns|setc|setnc|seto|setno|setp|setpe|setnp|setpo|sgdt|sidt|shl|shld|shrd|sldt|smsw|stc|std|sti|stos|str|sub|test|verr|verw|wait|fwait|wait|fwait|wbinvd|xchg|xlat|xlatb|xor)(q|l|w|b)?\b</string>
+			<string>\b((vadd|vsub|vmov|vtrn|vqdmulh|vmul|vld1|vqadd|vqshrun|vst[1234]|vaddw|vmull|vmlal|vrshrn|qmovun|vswp|vqmovun)\.([isup]?8|[isupf]?16|[isuf]?32|[isu]?64)|(subs|tst|beq|bge|bgt|mov|push|pop|cmp|blt|pld|adr|adrl|vswp|vpush|ldr|add|vpop|bx))?\b</string>
 			<key>name</key>
 			<string>keyword.mnemonic</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(movss|movsd|cvtss2sd|cvtsd2ss|cvtsi2ss|cvtsi2sd|cvtsi2ssq|cvtsi2sdq|cvttss2si|cvttsd2si|cvttss2siq|cvttsd2siq|ucomiss|ucomisd|addss|subss|mulss|divss|maxss|minss|sqrtss|addsd|subsd|mulsd|divsd|maxsd|minsd|sqrtsd)\b</string>
-			<key>name</key>
-			<string>keyword.mnemonic.ssefp</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -242,7 +242,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\$[0-9a-f]+\b</string>
+			<string>\#[0-9a-f]+\b</string>
 			<key>name</key>
 			<string>constant.numeric.literal</string>
 		</dict>
@@ -254,31 +254,37 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b[0-9a-f]+h?\b</string>
+			<string>\b0x[0-9a-fA-F]?\b</string>
 			<key>name</key>
 			<string>constant.numeric.hex</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^\.(globl|global)\b</string>
+			<string>\.(globl|global|macro|endm|purgem|if|elseif|else|endif|section|text|arm|align|balign|irp|rept|endr|req|unreq|error|short|func|endfunc|hidden|type|fpu|arch|code|altmacro|object_arch)\b</string>
 			<key>name</key>
-			<string>entity.directive</string>
+			<string>keyword.control.directive</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>%((ip|eip|rip|rax|eax|rbx|ebx|rcx|ecx|rdx|edx|rdi|edi|rsi|esi|rbp|ebp|rsp|esp|ax|bx|cx|dx|di|si|bp|sp|ah|al|bh|bl|ch|cl|dh|dl|ax|bx|cx|dx|cs|ds|ss|es|fs|gs|cr0|cr2|cr3|db0|db1|db2|db3|db6|db7|tr6|tr7|st)|(r(8|9|10|11|12|13|14|15)(d|w|b)?))\b</string>
+            <string>\b([rcp]1[0-5]|[rcp][0-9]|a[1-4]|v[1-8]|sl|sb|fp|ip|sp|lr|pc|[sd]3[0-1]|[sd][12][0-9]|[sd][0-9]|fpsid|fpscr|fpexc|q1[0-5]|q[0-9])?\b</string>
 			<key>name</key>
-			<string>storage.register</string>
+			<string>storage.type.register</string>
 		</dict>
-		<dict>
+        <dict>
 			<key>match</key>
-			<string>%xmm(0|1(0|1|2|3|4|5)?|2|3|4|5|6|7|8|9)\b</string>
+            <string>\\[_a-zA-Z]+[_a-zA-Z0-9]*\b</string>
 			<key>name</key>
-			<string>storage.register.ssefp</string>
-		</dict>
+            <string>variable.parameter</string>
+        </dict>
+        <dict>
+			<key>match</key>
+            <string>&amp;[_a-zA-Z]+[_a-zA-Z0-9]*&amp;?</string>
+			<key>name</key>
+            <string>variable.parameter</string>
+        </dict>
 	</array>
 	<key>scopeName</key>
-	<string>source.asm.ARM</string>
+	<string>source.asm.arm</string>
 	<key>uuid</key>
 	<string>433AE307-8DE5-4856-8113-37659B1AFDA4</string>
 </dict>
