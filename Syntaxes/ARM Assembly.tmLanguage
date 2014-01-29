@@ -230,7 +230,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b((vadd|vsub|vmov|vtrn|vqdmulh|vmul|vld1|vqadd|vqshrun|vst[1234]|vaddw|vmull|vmlal|vrshrn|qmovun|vswp|vqmovun)\.([isup]?8|[isupf]?16|[isuf]?32|[isu]?64)|(subs|tst|beq|bge|bgt|mov|push|pop|cmp|blt|pld|adr|adrl|vswp|vpush|ldr|add|vpop|bx))?\b</string>
+			<string>\b((vadd|vsub|vmov|vtrn|vqdmulh|vmul|vld1|vqadd|vqshrun|vst[1234]|vaddw|vmull|vmlal|vrshrn|qmovun|vswp|vqmovun)\.([isup]?8|[isupf]?16|[isuf]?32|[isu]?64)|(subs|cmp|and|strb|ldrb|eor|orr|sub|rsb|equ|svc|swi|tst|b|bl|mov|push|pop|cmp|blt|pld|adr|adrl|vswp|vpush|ldr|add|vpop|bx)(ne|eq|gt|ge)*)?\b</string>
 			<key>name</key>
 			<string>keyword.mnemonic</string>
 		</dict>
@@ -238,7 +238,7 @@
 			<key>match</key>
 			<string>^\S+:</string>
 			<key>name</key>
-			<string>entity.name.label</string>
+			<string>entity.name.function.c</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -266,7 +266,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-            <string>\b([rcp]1[0-5]|[rcp][0-9]|a[1-4]|v[1-8]|sl|sb|fp|ip|sp|lr|pc|[sd]3[0-1]|[sd][12][0-9]|[sd][0-9]|fpsid|fpscr|fpexc|q1[0-5]|q[0-9])?\b</string>
+            <string>\s+([rcp]1[0-5]|[rcp][0-9]|a[1-4]|v[1-8]|sl|sb|fp|ip|sp|lr|pc|[sd]3[0-1]|[sd][12][0-9]|[sd][0-9]|fpsid|fpscr|fpexc|q1[0-5]|q[0-9])?\b</string>
 			<key>name</key>
 			<string>storage.type.register</string>
 		</dict>
@@ -282,6 +282,12 @@
 			<key>name</key>
             <string>variable.parameter</string>
         </dict>
+		<dict>
+			<key>match</key>
+			<string>\s+\[.+\]</string>
+			<key>name</key>
+			<string>storage.type.c</string>
+		</dict>
 	</array>
 	<key>scopeName</key>
 	<string>source.asm.arm</string>

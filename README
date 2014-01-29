@@ -1,6 +1,4 @@
-This is a TextMate bundle which provides very basic language syntax for some
-ARM assembly.  It hasn't been tested extensively, but it seems to work well
-enough on the assembly files I worked on for another project.
+This is a fork of aumuell's ARM Assembly bundle, it seems to fix some of the issues with the original, including the adding of symbol detection for labels.
 
 Also, this was forked from drd's fork of foxostro's x86 Assembly bundle, which,
 in turn was forked from amorrow's PIC Assembly syntax.
