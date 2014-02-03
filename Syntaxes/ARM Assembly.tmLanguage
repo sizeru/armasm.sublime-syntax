@@ -248,7 +248,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\#(0x|&amp;)[0-9a-fA-F]+\b</string>
+			<string>(\#)?(0x|&amp;)[0-9a-fA-F]+\b</string>
 			<key>name</key>
 			<string>constant.numeric.hex</string>
 		</dict>
