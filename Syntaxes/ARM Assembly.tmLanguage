@@ -254,7 +254,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\#[0-9]+\b</string>
+			<string>(\#)?[0-9]+\b</string>
 			<key>name</key>
 			<string>constant.numeric.dec</string>
 		</dict>
