@@ -268,7 +268,7 @@
 			<key>match</key>
 			<string>\b((?i)(def(b|w|s))|swi|svc|equ|(st|ld)(r|rb|m(fd|fa|ed|ea|db|ib|da|ia))(?-i))?\b</string>
 			<key>name</key>
-			<string>keyword.control.import</string>
+			<string>entity.name.function.preprocessor</string>
 		</dict>
 		<dict>
 			<key>match</key>
