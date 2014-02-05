@@ -210,6 +210,12 @@
 			</array>
 		</dict>
 		<dict>
+			<key>match</key>
+			<string>^\S+:</string>
+			<key>name</key>
+			<string>entity.name.function</string>
+		</dict>
+		<dict>
 			<key>begin</key>
 			<string>^\s*#\s*(define|defined|elif|else|if|ifdef|ifndef|line|pragma|undef|endif)\b</string>
 			<key>captures</key>
@@ -242,12 +248,6 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^\S+:</string>
-			<key>name</key>
-			<string>entity.name.function.c</string>
-		</dict>
-		<dict>
-			<key>match</key>
 			<string>(\#)?(0x|&amp;)[0-9a-fA-F]+\b</string>
 			<key>name</key>
 			<string>constant.numeric.hex</string>
@@ -262,7 +262,7 @@
 			<key>match</key>
 			<string>\b((?i)(def(b|w|s))|swi|svc|equ|(st|ld)(r|rb|m(fd|fa|ed|ea|db|ib|da|ia))(?-i))?\b</string>
 			<key>name</key>
-			<string>keyword.operator.memory</string>
+			<string>string</string>
 		</dict>
 		<dict>
 			<key>match</key>
