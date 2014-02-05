@@ -236,7 +236,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b((?i)(vadd|vsub|vmov|vtrn|vqdmulh|vmul|vld1|vqadd|vqshrun|vst[1234]|vaddw|vmull|vmlal|vrshrn|qmovun|vswp|vqmovun)\.([isup]?8|[isupf]?16|[isuf]?32|[isu]?64)|(subs|cmp|and|strb|ldrb|eor|orr|sub|rsb|equ|svc|swi|tst|teq|b|bl|bx|blx|mov|push|pop|cmp|blt|pld|adr|adrl|vswp|vpush|ldr|add|vpop|bx)(ne|eq|cs|hs|cc|lo|mi|pl|vs|vc|hi|ls|lt|le|gt|ge|al)*(?-i))?\b</string>
+			<string>\b((?i)(vadd|vsub|vmov|vtrn|vqdmulh|vmul|vld1|vqadd|vqshrun|vst[1234]|vaddw|vmull|vmlal|vrshrn|qmovun|vswp|vqmovun)\.([isup]?8|[isupf]?16|[isuf]?32|[isu]?64)|(subs|cmp|and|strb|ldrb|eor|orr|sub|rsb|tst|teq|b|bl|bx|blx|mov|push|pop|cmp|blt|pld|adr|adrl|vswp|vpush|ldr|add|vpop|bx)(ne|eq|cs|hs|cc|lo|mi|pl|vs|vc|hi|ls|lt|le|gt|ge|al)*(?-i))?\b</string>
 			<key>name</key>
 			<string>keyword.mnemonic</string>
 		</dict>
@@ -257,6 +257,12 @@
 			<string>\#[0-9]+\b</string>
 			<key>name</key>
 			<string>constant.numeric.dec</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b((?i)(def(b|w|s))|swi|svc|equ|(st|ld)(r|m(fd|fa|ed|ea|db|ib|da|ia))(?-i))?\b</string>
+			<key>name</key>
+			<string>keyword.control.import</string>
 		</dict>
 		<dict>
 			<key>match</key>
