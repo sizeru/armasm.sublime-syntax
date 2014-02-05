@@ -213,7 +213,7 @@
 			<key>match</key>
 			<string>^\S+</string>
 			<key>name</key>
-			<string>entity.name.function</string>
+			<string>entity.name.label</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -287,6 +287,12 @@
 			<string>(\b|\s+)\#[0-9a-zA-Z_]+\b</string>
 			<key>name</key>
 			<string>constant.numeric.literal</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b[0-9a-zA-Z_]+\b</string>
+			<key>name</key>
+			<string>entity.name.label</string>
 		</dict>
 		<dict>
 			<key>match</key>
