@@ -288,12 +288,12 @@
 			<key>name</key>
 			<string>constant.numeric.literal</string>
 		</dict>
-		<dict>
+		<!-- <dict>
 			<key>match</key>
 			<string>\b[0-9a-zA-Z_]+\b</string>
 			<key>name</key>
 			<string>entity.name.function</string>
-		</dict>
+		</dict> -->
 		<dict>
 			<key>match</key>
 			<string>(\b|\s+)[0-9]+\b</string>
