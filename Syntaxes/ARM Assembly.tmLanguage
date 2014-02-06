@@ -242,9 +242,15 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b((?i)(vadd|vsub|vmov|vtrn|vqdmulh|vmul|vld1|vqadd|vqshrun|vst[1234]|vaddw|vmull|vmlal|vrshrn|qmovun|vswp|vqmovun)\.([isup]?8|[isupf]?16|[isuf]?32|[isu]?64)|(subs|cmp|and|eor|orr|sub|rsb|tst|teq|b|bl|bx|blx|mov|push|pop|cmp|blt|pld|adr|adrl|vswp|vpush|add|vpop|bx)(ne|eq|cs|hs|cc|lo|mi|pl|vs|vc|hi|ls|lt|le|gt|ge|al)?(?-i))?\b</string>
+			<string>\b((?i)(vadd|vsub|vmov|vtrn|vqdmulh|vmul|vld1|vqadd|vqshrun|vst[1234]|vaddw|vmull|vmlal|vrshrn|qmovun|vswp|vqmovun)\.([isup]?8|[isupf]?16|[isuf]?32|[isu]?64)|(subs|cmp|and|eor|orr|sub|rsb|tst|teq|mov|push|pop|cmp|blt|pld|adr|adrl|vswp|vpush|add|vpop)(ne|eq|cs|hs|cc|lo|mi|pl|vs|vc|hi|ls|lt|le|gt|ge|al)?(?-i))?\b</string>
 			<key>name</key>
-			<string>keyword.mnemonic</string>
+			<string>keyword.mnemonic.arithmetic</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b((?i)b(l|x|lx)?(ne|eq|cs|hs|cc|lo|mi|pl|vs|vc|hi|ls|lt|le|gt|ge|al)?(?-i))?\b</string>
+			<key>name</key>
+			<string>meta.preprocessor.c.branches</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -256,7 +262,7 @@
 			<key>match</key>
 			<string>\b((?i)(def(b|w|s))|swi|svc|equ|(st|ld)(r|rb|m(fd|fa|ed|ea|db|ib|da|ia))(ne|eq|cs|hs|cc|lo|mi|pl|vs|vc|hi|ls|lt|le|gt|ge|al)?(?-i))?\b</string>
 			<key>name</key>
-			<string>meta.preprocessor.macro</string>
+			<string>meta.preprocessor.macro.memory</string>
 		</dict>
 		<dict>
 			<key>match</key>
