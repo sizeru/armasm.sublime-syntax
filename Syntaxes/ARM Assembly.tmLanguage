@@ -260,7 +260,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b((?i)swi|svc|(st|ld)(r|rb|m(fd|fa|ed|ea|db|ib|da|ia))|b(l|x|lx)?|(ne|eq|cs|hs|cc|lo|mi|pl|vs|vc|hi|ls|lt|le|gt|ge|al)?(?-i))?\b</string>
+			<string>\b((?i)(swi|svc|(st|ld)(r|rb|m(fd|fa|ed|ea|db|ib|da|ia))|b(l|x|lx)?)(ne|eq|cs|hs|cc|lo|mi|pl|vs|vc|hi|ls|lt|le|gt|ge|al)?(?-i))?\b</string>
 			<key>name</key>
 			<string>meta.preprocessor.macro.memory</string>
 		</dict>
