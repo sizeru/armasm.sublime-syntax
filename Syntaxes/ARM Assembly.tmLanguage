@@ -250,7 +250,7 @@
 			<key>match</key>
 			<string>\b((?i)b(l|x|lx)?(ne|eq|cs|hs|cc|lo|mi|pl|vs|vc|hi|ls|lt|le|gt|ge|al)?(?-i))?\b</string>
 			<key>name</key>
-			<string>meta.preprocessor.c.branches</string>
+			<string>meta.preprocessor.c.include</string>
 		</dict>
 		<dict>
 			<key>match</key>
