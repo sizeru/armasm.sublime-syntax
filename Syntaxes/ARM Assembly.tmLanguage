@@ -266,6 +266,12 @@
 		</dict>
 		<dict>
 			<key>match</key>
+			<string>\b((?i)nop(ne|eq|cs|hs|cc|lo|mi|pl|vs|vc|hi|ls|lt|le|gt|ge|al)?(?-i))?\b</string>
+			<key>name</key>
+			<string>comment.nop</string>
+		</dict>
+		<dict>
+			<key>match</key>
 			<string>\.(?i)(globl|global|macro|endm|purgem|if|elseif|else|endif|section|text|arm|align|balign|irp|rept|endr|req|unreq|error|short|func|endfunc|hidden|type|fpu|arch|code|altmacro|object_arch)(?-i)\b</string>
 			<key>name</key>
 			<string>keyword.control.directive</string>
