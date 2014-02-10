@@ -19,13 +19,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-            <string>//.*$</string>
+            		<string>//.*$</string>
 			<key>name</key>
 			<string>comment.line</string>
 		</dict>
 		<dict>
 			<key>match</key>
-            <string>;.*$</string>
+            		<string>;.*$</string>
 			<key>name</key>
 			<string>comment.line</string>
 		</dict>
@@ -278,13 +278,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-            <string>\s+((?i)[rcp]1[0-5]|[rcp][0-9]|a[1-4]|v[1-8]|sl|sb|fp|ip|sp|lr|pc|[sd]3[0-1]|[sd][12][0-9]|[sd][0-9]|fpsid|fpscr|fpexc|q1[0-5]|q[0-9](?-i))?\b</string>
+            		<string>\s+((?i)[rcp]1[0-5]|[rcp][0-9]|a[1-4]|v[1-8]|sl|sb|fp|ip|sp|lr|pc|[sd]3[0-1]|[sd][12][0-9]|[sd][0-9]|fpsid|fpscr|fpexc|q1[0-5]|q[0-9]!?(?-i))?\b</string>
 			<key>name</key>
 			<string>storage.type.register</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\s+(\[.+\]|\{.+\})</string>
+			<string>\s+(\[.+\]!?|\{.+\})</string>
 			<key>name</key>
 			<string>storage.type.c.memaccess</string>
 		</dict>
