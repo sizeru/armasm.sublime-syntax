@@ -269,7 +269,7 @@
 				)
 				(ne|eq|cs|hs|cc|lo|mi|pl|vs|vc|hi|ls|lt|le|gt|ge|al)?(?-i))?\b</string>
 			<key>name</key>
-			<string>support.mnemonic.arithmetic</string>
+			<string>support.function.mnemonic.arithmetic</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -289,7 +289,7 @@
 					cbn?z
 				)(ne|eq|cs|hs|cc|lo|mi|pl|vs|vc|hi|ls|lt|le|gt|ge|al)?(?-i))?\b</string>
 			<key>name</key>
-			<string>support.mnemonic.memory</string>
+			<string>support.function.mnemonic.memory</string>
 		</dict>
 		<dict>
 			<key>match</key>
