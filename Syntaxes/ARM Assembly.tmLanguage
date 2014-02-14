@@ -269,7 +269,7 @@
 				)
 				(ne|eq|cs|hs|cc|lo|mi|pl|vs|vc|hi|ls|lt|le|gt|ge|al)?(?-i))?\b</string>
 			<key>name</key>
-			<string>keyword.mnemonic.arithmetic</string>
+			<string>support.mnemonic.arithmetic</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -289,7 +289,7 @@
 					cbn?z
 				)(ne|eq|cs|hs|cc|lo|mi|pl|vs|vc|hi|ls|lt|le|gt|ge|al)?(?-i))?\b</string>
 			<key>name</key>
-			<string>keyword.mnemonic.memory</string>
+			<string>support.mnemonic.memory</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -358,7 +358,7 @@
 			<key>match</key>
 			<string>\b([a-zA-Z_]+[0-9a-zA-Z_]*|[0-9]+[a-zA-Z_]+[0-9a-zA-Z_]*)\b</string>
 			<key>name</key>
-			<string>punctuation.section.embedded.begin</string>
+			<string>entity.name.tag.label</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
