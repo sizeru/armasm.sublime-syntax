@@ -229,7 +229,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^\S+(?=:)</string>
+			<string>^[0-9a-zA-Z_]$</string>
 			<key>name</key>
 			<string>entity.name.function</string>
 		</dict>
@@ -275,7 +275,7 @@
 				)
 				(ne|eq|cs|hs|cc|lo|mi|pl|vs|vc|hi|ls|lt|le|gt|ge|al)?(?-i))?\b</string>
 			<key>name</key>
-			<string>support.mnemonic.arithmetic</string>
+			<string>keyword.mnemonic.arithmetic</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -295,7 +295,7 @@
 					cbn?z
 				)(ne|eq|cs|hs|cc|lo|mi|pl|vs|vc|hi|ls|lt|le|gt|ge|al)?(?-i))?\b</string>
 			<key>name</key>
-			<string>support.mnemonic.memory</string>
+			<string>keyword.mnemonic.memory</string>
 		</dict>
 		<dict>
 			<key>match</key>
