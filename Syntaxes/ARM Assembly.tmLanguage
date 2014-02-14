@@ -213,7 +213,7 @@
 			<key>match</key>
 			<string>((?i)([rcp]1[0-5]|[rcp][0-9]|a[1-4]|v[1-8]|sl|sb|fp|ip|sp|lr|pc|[sd]3[0-1]|[sd][12][0-9]|[sd][0-9]|fpsid|fpscr|fpexc|q1[0-5]|q[0-9]|APSR_nzcv|sy)!?(?-i))?\b</string>
 			<key>name</key>
-			<string>variable.other.register</string>
+			<string>storage.other.register</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -358,7 +358,7 @@
 			<key>match</key>
 			<string>\b([a-zA-Z_]+[0-9a-zA-Z_]*|[0-9]+[a-zA-Z_]+[0-9a-zA-Z_]*)\b</string>
 			<key>name</key>
-			<string>meta.function.label</string>
+			<string>entity.function.label</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
