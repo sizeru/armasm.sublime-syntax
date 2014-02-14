@@ -228,12 +228,6 @@
 			<string>keyword.control.arch.arm</string>
 		</dict>
 		<dict>
-			<key>match</key>
-			<string>^[0-9a-zA-Z_]$</string>
-			<key>name</key>
-			<string>entity.name.function</string>
-		</dict>
-		<dict>
 			<key>begin</key>
 			<string>^\s*#\s*(define|defined|elif|else|if|ifdef|ifndef|line|pragma|undef|endif)\b</string>
 			<key>captures</key>
@@ -359,6 +353,12 @@
 			<string>(\b|\s+)[0-9]+\b</string>
 			<key>name</key>
 			<string>constant.numeric.dec</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b([a-zA-Z_]+[0-9a-zA-Z_]*|[0-9]+[a-zA-Z_]+[0-9a-zA-Z_]*)\b</string>
+			<key>name</key>
+			<string>entity.name.class</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
