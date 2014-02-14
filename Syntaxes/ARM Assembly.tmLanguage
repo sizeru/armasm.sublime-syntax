@@ -211,7 +211,25 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^\S+</string>
+			<string>((?i)([rcp]1[0-5]|[rcp][0-9]|a[1-4]|v[1-8]|sl|sb|fp|ip|sp|lr|pc|[sd]3[0-1]|[sd][12][0-9]|[sd][0-9]|fpsid|fpscr|fpexc|q1[0-5]|q[0-9]|APSR_nzcv|sy)!?(?-i))?\b</string>
+			<key>name</key>
+			<string>variable.other.register</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\.(?i)(globl|global|macro|endm|purgem|if|elseif|else|endif|section|text|arm|align|balign|irp|rept|endr|req|unreq|error|short|func|endfunc|hidden|type|fpu|arch|code|altmacro|object_arch|word|int|string)(?-i)\b</string>
+			<key>name</key>
+			<string>keyword.control.directive</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>armv(2a?|3m?|4t?|5t?e?6(j|t2|zk?|-m)?|7v?e?(-(a|r|m))?|8-a(\+crc)?)</string>
+			<key>name</key>
+			<string>keyword.control.arch.arm</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^\S+(?=:)</string>
 			<key>name</key>
 			<string>entity.name.function</string>
 		</dict>
@@ -242,9 +260,42 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b((?i)(vadd|vsub|vmov|vtrn|vqdmulh|vmul|vld1|vqadd|vqshrun|vst[1234]|vaddw|vmull|vmlal|vrshrn|qmovun|vswp|vqmovun)\.([isup]?8|[isupf]?16|[isuf]?32|[isu]?64)|(subs|cmp|and|eor|orr|sub|rsb|tst|teq|mov|push|pop|cmp|blt|pld|adr|adrl|vswp|vpush|add|vpop)(ne|eq|cs|hs|cc|lo|mi|pl|vs|vc|hi|ls|lt|le|gt|ge|al)?(?-i))?\b</string>
+			<string>(?x)\b((?i)
+				(
+					(bf(c|i)|(u|s)bfx|(u|s)xta?(h|b)?) |
+					(v(add|cvt|sub|mov|trn|cmp|div|qdmulh|mrs|mul|ld1|qadd|qshrun|st[1234]|addw|mull|mlal|rshrn|swp|qmovun)|qmovun)(\.([isup]?8|[isupf]?16|[isuf]?32|[isu]?64))* |
+					(and|eor|sub|rsb|add|adc|sbc|rsc|tst|teq|cmp|cmn|orr|mov|bic|mvn |
+						(neg) |
+						(lsr|lsl|ror|asr) # shift ops either pseudo ops or actual shifts
+					)s? |
+					(mul|mla|mull|smlabb) |
+					(mov(w|t)) |
+					rev(8|16)? |
+					(pld|adr|adrl|vswp)
+				)
+				(ne|eq|cs|hs|cc|lo|mi|pl|vs|vc|hi|ls|lt|le|gt|ge|al)?(?-i))?\b</string>
 			<key>name</key>
-			<string>keyword.mnemonic.arithmetic</string>
+			<string>support.mnemonic.arithmetic</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?x)\b((?i)(
+					swi|svc |
+					dmb |
+					v(ldr|str|push|pop) |
+					(push|pop) |
+					(st|ld)(
+						r(ex|s?(h|b)|d)? |
+						m(
+							(f|e)(d|a) |
+							(d|i)(b|a)
+						)?
+					) |
+					b(l|x|lx)? |
+					cbn?z
+				)(ne|eq|cs|hs|cc|lo|mi|pl|vs|vc|hi|ls|lt|le|gt|ge|al)?(?-i))?\b</string>
+			<key>name</key>
+			<string>support.mnemonic.memory</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -260,31 +311,28 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b((?i)(swi|svc|(st|ld)(r|rb|m(fd|fa|ed|ea|db|ib|da|ia))|b(l|x|lx)?)(ne|eq|cs|hs|cc|lo|mi|pl|vs|vc|hi|ls|lt|le|gt|ge|al)?(?-i))?\b</string>
-			<key>name</key>
-			<string>meta.preprocessor.macro.memory</string>
-		</dict>
-		<dict>
-			<key>match</key>
 			<string>\b((?i)nop(ne|eq|cs|hs|cc|lo|mi|pl|vs|vc|hi|ls|lt|le|gt|ge|al)?(?-i))?\b</string>
 			<key>name</key>
 			<string>comment.nop</string>
 		</dict>
-		<dict>
-			<key>match</key>
-			<string>\.(?i)(globl|global|macro|endm|purgem|if|elseif|else|endif|section|text|arm|align|balign|irp|rept|endr|req|unreq|error|short|func|endfunc|hidden|type|fpu|arch|code|altmacro|object_arch)(?-i)\b</string>
-			<key>name</key>
-			<string>keyword.control.directive</string>
-		</dict>
-		<dict>
-			<key>match</key>
-            		<string>\s+((?i)([rcp]1[0-5]|[rcp][0-9]|a[1-4]|v[1-8]|sl|sb|fp|ip|sp|lr|pc|[sd]3[0-1]|[sd][12][0-9]|[sd][0-9]|fpsid|fpscr|fpexc|q1[0-5]|q[0-9])!?(?-i))?\b</string>
-			<key>name</key>
-			<string>storage.type.register</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\s+(\[.+\]!?|\{.+\})</string>
+        <dict>
+			<key>begin</key>
+			<string>\s\[</string>
+            <key>end</key>
+            <string>\]</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>(?&gt;\\\s*\n)</string>
+					<key>name</key>
+					<string>punctuation.separator.continuation.c</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>$base</string>
+				</dict>
+			</array>
 			<key>name</key>
 			<string>storage.type.c.memaccess</string>
 		</dict>
@@ -296,21 +344,15 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(\b|\s+)(\#)?(0x|&amp;)[0-9a-fA-F_]+\b</string>
+			<string>(\b|\s+)(\#)?-?(0x|&amp;)[0-9a-fA-F_]+\b</string>
 			<key>name</key>
 			<string>constant.numeric.hex</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(\b|\s+)\#[0-9a-zA-Z_]+\b</string>
+			<string>(\b|\s+)\#-?[0-9a-zA-Z_]+\b</string>
 			<key>name</key>
 			<string>constant.numeric.literal</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b([a-zA-Z_]+[0-9a-zA-Z_]*|[0-9]+[a-zA-Z_]+[0-9a-zA-Z_]*)\b</string>
-			<key>name</key>
-			<string>entity.name.function</string>
 		</dict>
 		<dict>
 			<key>match</key>
