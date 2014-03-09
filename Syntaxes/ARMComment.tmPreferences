@@ -5,7 +5,7 @@
         <key>name</key>
         <string>ARM Comments</string>
         <key>scope</key>
-        <string>source.arm</string>
+        <string>source.asm.arm</string>
         <key>settings</key>
         <dict>
                 <key>shellVariables</key>
@@ -16,7 +16,27 @@
                                 <key>value</key>
                                 <string>; </string>
                         </dict>
+                        <dict>
+                                <key>name</key>
+                                <string>TM_COMMENT_START_2</string>
+                                <key>value</key>
+                                <string>/*</string>
+                        </dict>
+                        <dict>
+                                <key>name</key>
+                                <string>TM_COMMENT_END_2</string>
+                                <key>value</key>
+                                <string>*/</string>
+                        </dict>
+                        <dict>
+                                <key>name</key>
+                                <string>TM_COMMENT_DISABLE_INDENT</string>
+                                <key>value</key>
+                                <string>no</string>
+                        </dict>
                 </array>
         </dict>
+        <key>uuid</key>
+        <string>433AE307-8DE5-4856-8113-37659B1AFDA5</string>
 </dict>
 </plist>
