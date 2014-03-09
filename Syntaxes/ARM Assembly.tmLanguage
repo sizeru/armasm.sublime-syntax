@@ -358,7 +358,7 @@
 			<key>match</key>
 			<string>\b([a-zA-Z_]+[0-9a-zA-Z_]*|[0-9]+[a-zA-Z_]+[0-9a-zA-Z_]*)\b</string>
 			<key>name</key>
-			<string>entity.name.function.label</string>
+			<string>meta.function.source.arm.label</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
