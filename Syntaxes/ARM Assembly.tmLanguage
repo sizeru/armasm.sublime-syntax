@@ -211,7 +211,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>((?i)([rcp]1[0-5]|[rcp][0-9]|a[1-4]|v[1-8]|sl|sb|fp|ip|sp|lr|pc|[sd]3[0-1]|[sd][12][0-9]|[sd][0-9]|fpsid|fpscr|fpexc|q1[0-5]|q[0-9]|APSR_nzcv|sy)!?(?-i))?\b</string>
+			<string>((?i)([rcp]1[0-5]|[rcp][0-9]|a[1-4]|v[1-8]|sl|sb|fp|ip|sp|lr|(c|s)psr(_c)?|pc|[sd]3[0-1]|[sd][12][0-9]|[sd][0-9]|fpsid|fpscr|fpexc|q1[0-5]|q[0-9]|APSR_nzcv|sy)!?(?-i))?\b</string>
 			<key>name</key>
 			<string>storage.other.register</string>
 		</dict>
@@ -258,7 +258,7 @@
 				(
 					(bf(c|i)|(u|s)bfx|(u|s)xta?(h|b)?) |
 					(v(add|cvt|sub|mov|trn|cmp|div|qdmulh|mrs|mul|ld1|qadd|qshrun|st[1234]|addw|mull|mlal|rshrn|swp|qmovun)|qmovun)(\.([isup]?8|[isupf]?16|[isuf]?32|[isu]?64))* |
-					(and|eor|sub|rsb|add|adc|sbc|rsc|tst|teq|cmp|cmn|orr|mov|bic|mvn |
+					(and|m(rs|sr)|eor|sub|rsb|add|adc|sbc|rsc|tst|teq|cmp|cmn|orr|mov|bic|mvn |
 						(neg) |
 						(lsr|lsl|ror|asr) # shift ops either pseudo ops or actual shifts
 					)s? |
@@ -293,7 +293,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b((?i)(def(b|w|s)|equ)(?-i))?\b</string>
+			<string>\b((?i)(def(b|w|s)|equ|include)(?-i))?\b</string>
 			<key>name</key>
 			<string>meta.preprocessor.c.include</string>
 		</dict>
