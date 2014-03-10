@@ -258,7 +258,7 @@
 				(
 					(bf(c|i)|(u|s)bfx|(u|s)xta?(h|b)?) |
 					(v(add|cvt|sub|mov|trn|cmp|div|qdmulh|mrs|mul|ld1|qadd|qshrun|st[1234]|addw|mull|mlal|rshrn|swp|qmovun)|qmovun)(\.([isup]?8|[isupf]?16|[isuf]?32|[isu]?64))* |
-					(and|eor|sub|rsb|add|adc|sbc|rsc|tst|teq|cmp|cmn|orr|mov|bic|mvn |
+					(and|m(rs|sr)|eor|sub|rsb|add|adc|sbc|rsc|tst|teq|cmp|cmn|orr|mov|bic|mvn |
 						(neg) |
 						(lsr|lsl|ror|asr) # shift ops either pseudo ops or actual shifts
 					)s? |
