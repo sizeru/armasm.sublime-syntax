@@ -301,7 +301,7 @@
 			<key>match</key>
 			<string>\b(?i)(align)(?-i)\b</string>
 			<key>name</key>
-			<string>storage.type.c.align</string>
+			<string>storage.type.c.memaccess.align</string>
 		</dict>
 		<dict>
 			<key>match</key>
