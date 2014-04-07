@@ -293,15 +293,15 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b((?i)(def(b|w|s)|equ|include|get)(?-i))?\b</string>
+			<string>\b((?i)(def(b|w|s)|equ|(include|get)\s+([a-zA-Z_]+[0-9a-zA-Z_]*|[0-9]+[a-zA-Z_]+[0-9a-zA-Z_]*\.s)?)(?-i))?\b</string>
 			<key>name</key>
 			<string>meta.preprocessor.c.include</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i)(align)(?-i)\b</string>
+			<string>\b((?i)(align)(?-i))?\b</string>
 			<key>name</key>
-			<string>storage.type.c.memaccess.align</string>
+			<string>storage.type.c.memaccess</string>
 		</dict>
 		<dict>
 			<key>match</key>
